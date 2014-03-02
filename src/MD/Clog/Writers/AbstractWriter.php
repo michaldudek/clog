@@ -66,7 +66,7 @@ abstract class AbstractWriter implements LoggerInterface
             throw new InvalidArgumentException('one of \Psr\Log\LogLevel constants', $level);
         }
 
-        return $this->levels[$level] >= $this->levels[$levelThreshold];
+        return $this->levels[$level] >= $this->levels[$this->levelThreshold];
     }
 
     /**
