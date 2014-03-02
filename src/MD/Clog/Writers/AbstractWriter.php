@@ -18,6 +18,7 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 use MD\Foundation\Exceptions\InvalidArgumentException;
+use MD\Foundation\Exceptions\NotImplementedException;
 
 abstract class AbstractWriter implements LoggerInterface
 {
@@ -53,7 +54,9 @@ abstract class AbstractWriter implements LoggerInterface
      * @param array $context
      * @return null
      */
-    abstract public function log($level, $message, array $context = array());
+    public function log($level, $message, array $context = array()) {
+        throw new NotImplementedException('You must implement \Psr\Log\LoggerInterface::log() method.');
+    }
 
     /**
      * Checks if the given log level is above the set threshold.
