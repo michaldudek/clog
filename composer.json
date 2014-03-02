@@ -1,0 +1,23 @@
+{
+    "name": "michaldudek/clog",
+    "description": "Simple lightweight log system.",
+    "keywords": ["log", "logger"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michał Dudek",
+            "email": "michal@michaldudek.pl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "psr/log": "1.0.*",
+        "michaldudek/foundation": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "MD\\Clog\\Tests": "tests/",
+            "MD\\Clog": "src/"
+        }
+    }
+}

@@ -1,4 +1,4 @@
 clog
 ====
 
-A logging system.
+A simple lightweight logging system.
