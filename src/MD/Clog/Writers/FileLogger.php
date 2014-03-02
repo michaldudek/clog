@@ -56,6 +56,11 @@ class FileLogger extends AbstractWriter
             return;
         }
 
+        // file path might be null or false for disabled logger
+        if (!$this->filePath) {
+            return;
+        }
+
         $fileHandle = $this->provideFileHandle();
 
         $date = isset($context['_date']) && $context['_date'] instanceof \DateTime
