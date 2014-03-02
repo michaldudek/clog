@@ -66,7 +66,8 @@ class FileLogger extends AbstractWriter
         $date = isset($context['_date']) && $context['_date'] instanceof \DateTime
             ? $context['_date']
             : new \DateTime();
-        $message = '['. $date->format('Y.m.d H:i:s', $date) .'] '. mb_strtoupper($level) .' : '. $message;
+        $uuid = isset($context['_uuid']) ? ' '. $context['_uuid'] .' ' : '';
+        $message = '['. $date->format('Y.m.d H:i:s') .'] '. $uuid . mb_strtoupper($level) .' : '. $message;
 
         fwrite($fileHandle, $message ."\n");
     }
