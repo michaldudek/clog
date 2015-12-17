@@ -83,6 +83,11 @@ class FileLogger extends AbstractWriter
         }
 
         if (!is_file($this->filePath)) {
+            $path = dirname($this->filePath);
+            if (is_dir($path)) {
+                mkdir($path, 0777, true);
+            }
+
             touch($this->filePath);
         }
 
